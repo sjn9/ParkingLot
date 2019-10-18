@@ -61,10 +61,12 @@ public class Car{
         connection = Myconn.getConnection();
         Statement st = connection.createStatement();
         resultSet = st.executeQuery(sql);
-        while(resultSet.next()){
+        if(resultSet.next()){
             String slot_no=resultSet.getString("slot_no");
             
             System.out.format("%s, ", slot_no);
         }
+        else
+            System.out.println("Not found");
     }
 }
