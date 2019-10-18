@@ -20,17 +20,25 @@ public class ParkingLot {
     
     public static String park(String reg_no, String color) throws Exception{
         int res=0;
+        int count=0;
+        String output=""; 
         for(int i=0;i<slot.size();i++){
-            if(i==0){
+            if(slot.get(i)==0){
                 slot.set(i, -1);
                 res=i+1;
+                count++;
                 break;
             }
         }
+        if(count>0){
         CarDetails car=new CarDetails(res,reg_no,color);
         Car newCar=new Car();
         newCar.insertNewCar(car);
-        return "Allocated slot no: "+res+"";
+        output="Allocated slot no: "+res+"";
+        }
+        else
+            output="Sorry, parking lot is full";
+        return output;
     }
     
     public static String leave(int n) throws Exception{

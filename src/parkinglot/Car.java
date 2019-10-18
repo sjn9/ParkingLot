@@ -16,7 +16,7 @@ public class Car{
         return preparedStatement.executeUpdate() > 0;
     }
     public boolean deleteCar (int n) throws Exception {
-        sql = "delete from car where slot_no="+n+"";
+        sql = "delete from car where slot_no= '"+ n +"'";
         connection = Myconn.getConnection();
         preparedStatement = connection.prepareStatement(sql);
         return preparedStatement.executeUpdate() > 0;
@@ -35,7 +35,7 @@ public class Car{
         }
     }
     public void carDetailsColor (String color) throws Exception {
-        sql = "select reg_no from car where color= "+color+"";
+        sql = "select reg_no from car where color= '"+ color +"'";
         connection = Myconn.getConnection();
         Statement st = connection.createStatement();
         resultSet = st.executeQuery(sql);
@@ -46,7 +46,7 @@ public class Car{
         }
     }
     public void carDetailsColor1 (String color) throws Exception {
-        sql = "select slot_no from car where color= "+color+"";
+        sql = "select slot_no from car where color= '"+ color +"'";
         connection = Myconn.getConnection();
         Statement st = connection.createStatement();
         resultSet = st.executeQuery(sql);
@@ -57,7 +57,7 @@ public class Car{
         }
     }
     public void carDetailsRegno (String reg_no) throws Exception {
-        sql = "select slot_no from car where reg_no= "+reg_no+"";
+        sql = "select slot_no from car where reg_no= '"+ reg_no +"'";
         connection = Myconn.getConnection();
         Statement st = connection.createStatement();
         resultSet = st.executeQuery(sql);

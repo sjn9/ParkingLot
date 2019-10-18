@@ -20,7 +20,7 @@ public class Myconn
        
        try
        {
-            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/db","root","root");
+            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/parking","root","root");
             System.out.println("data base connected");
        }    
        catch(SQLException e)
